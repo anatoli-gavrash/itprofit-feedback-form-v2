@@ -1,0 +1,21 @@
+@import './styles/_reset.sass'
+@import './styles/_variables.sass'
+@import './styles/_patterns.sass'
+@import './styles/_form.sass'
+@import './styles/_modal-window.sass'
+
+html
+  scrollbar-gutter: stable
+
+body 
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+  justify-content: center
+  align-items: center
+  font-family: $font-base
+  color: $color-text
+  background-color: $color-backgr-body
+
+  &.hide-scroll
+    overflow: hidden
