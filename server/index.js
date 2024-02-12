@@ -1,3 +1,5 @@
+const getValidationErrors = require('./validation.js');
+
 const express = require("express");
 const cors = require("cors");
 const app = express();
@@ -5,6 +7,7 @@ const app = express();
 const port = 9090;
 
 app.use(cors());
+app.use(express.json());
 
 app.post("/api/registration", (req, res) => {
   if (Math.random() > 0.5) {
@@ -21,11 +24,21 @@ app.post("/api/registration", (req, res) => {
   }
 
   setTimeout(() => {
+    const [isErrors, errors] = getValidationErrors(req.body);
+    
     res.statusCode = 200;
-    res.send({
-      status: "success",
-      message: "You are registered",
-    });
+    
+    if (isErrors) {
+      res.send({
+        status: "error",
+        fields: errors
+      });
+    } else {
+      res.send({
+        status: "success",
+        message: "You are registered",
+      });
+    }
   }, Math.random() * 1000);
 });
 

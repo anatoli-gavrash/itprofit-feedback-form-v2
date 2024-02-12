@@ -1,4 +1,5 @@
-import { isObjectEmpty } from "./utils";
+'use strict';
+const isObjectEmpty = require('./utils.js');
 
 const validation = ({name, email, phone, message}) => {
   const errors = {};
@@ -15,8 +16,8 @@ const validation = ({name, email, phone, message}) => {
 
   if (!phone) {
     errors.phone = 'Обязательное поле';
-  } else if (!/^\+375 ?\(\d{2}\) ?\d{3}-\d{2}-\d{2}$/.test(phone)) {
-    errors.phone = 'Введите телефон в указанном формате'
+  } else if (phone.length !== 12) {
+    errors.phone = 'Длина нормера ровно 12 знаков'
   }
 
   if (!message) {
@@ -26,10 +27,9 @@ const validation = ({name, email, phone, message}) => {
   return errors
 };
 
-export const getValidationErrors = (field) => {
-  const errors = validation(field);
+module.exports = function getValidationErrors(form) {
+  const errors = validation(form);
   const isErrors = !isObjectEmpty(errors);
 
   return [isErrors, errors];
 };
-
