@@ -1,0 +1,76 @@
+.modal-open-button
+  position: absolute
+  top: 15px
+  left: 15px
+  color: $color-text-alt
+
+.modal
+  display: flex
+  position: absolute
+  width: 100vw
+  height: 100vh
+  padding: 10px 20px 10px 10px
+  top: 0
+  left: 0
+  justify-content: center
+  align-items: center
+  text-align: center
+  background-color: $color-modal-backgr
+  scale: 0
+  opacity: 0
+
+  &.show
+    scale: 1
+    opacity: 1
+    transition: scale 0.1s ease-in-out, opacity 0.3s ease-in-out
+  
+  &__button
+    position: absolute
+    width: 40px
+    height: 40px
+    top: 25px
+    right: 25px
+    border: none
+    border-radius: 5px
+    visibility: hidden
+    transition: scale 0.2s ease-in-out
+
+    &::before,
+    &::after
+      content: ""
+      position: absolute
+      width: 70%
+      height: 2px
+      background-color: $color-text
+      transform-origin: left
+      transform: rotate(45deg) translate(-50%, 0%)
+
+    &::after
+      transform: rotate(-45deg) translate(-50%, 0%)
+
+    &:hover
+      scale: 1.05
+
+    &:active
+      scale: 0.95
+
+    &:focus
+      outline-color: $color-base
+
+  &.show &__button
+    visibility: visible
+
+  &__content
+    display: flex
+    flex-direction: column
+    row-gap: 15px
+    padding: 30px
+    border: 2px solid $color-base
+    border-radius: 5px
+    background-color: $color-backgr
+    box-shadow: $shadow-base $color-shadow-base
+    opacity: 0
+    transition: opacity 0.3s ease-in-out 0.3s
+
+  &.show &__content
+    opacity: 1

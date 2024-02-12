@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Form</title>
+</head>
+<body>
+  <section class="feedback">
+    <h2 class="feedback__title">Форма обратной связи</h2>
+    <form class="feedback__form" novalidate>
+      <div class="feedback__form-wrapper">
+        <label class="feedback__form-wrapper-label" for="id-name">Имя *</label>
+        <input class="feedback__form-wrapper-input"
+          type="text"
+          name="name"
+          id="id-name"
+          placeholder="Ваше имя *">
+        <label class="feedback__form-wrapper-error" for="id-name"></label>
+      </div>
+      <div class="feedback__form-wrapper">
+        <label class="feedback__form-wrapper-label" for="id-email">Email *</label>
+        <input class="feedback__form-wrapper-input"
+          type="email"
+          name="email"
+          id="id-email"
+          placeholder="Ваш Email *">
+        <label class="feedback__form-wrapper-error" for="id-email"></label>
+      </div>
+      <div class="feedback__form-wrapper">
+        <label class="feedback__form-wrapper-label" for="id-phone">Телефон *</label>
+        <input class="feedback__form-wrapper-input"
+          type="text"
+          name="phone"
+          id="id-phone"
+          placeholder="+{375} (XX) XXX-XX-XX *">
+        <label class="feedback__form-wrapper-error" for="id-phone"></label>
+      </div>
+      <div class="feedback__form-wrapper">
+        <label class="feedback__form-wrapper-label" for="id-message">Сообщение *</label>
+        <textarea class="feedback__form-wrapper-textarea"
+          name="message"
+          id="id-message"
+          placeholder="Введите ваше сообщение *"
+        ></textarea>
+        <label class="feedback__form-wrapper-error" for="id-message"></label>
+      </div>
+      <div class="feedback__form-buttons">
+        <button class="feedback__form-buttons-button alt-button" type="reset">очистить</button>
+        <button class="feedback__form-buttons-button main-button" type="submit">отправить</button>
+      </div>
+      <div class="feedback__form-success">
+        <div class="feedback__form-success-icon"></div>
+        <p class="feedback__form-success-message"></p>
+        <button class="feedback__form-success-button main-button" type="button">закрыть</button>
+      </div>
+    </form>
+  </section>
+  <button class="modal-open-button main-button" type="button">Открыть модальное окно</button>
+  <div class="modal">
+    <button class="modal__button" type="button"></button>
+    <div class="modal__content">
+      <h2 class="modal__content-title">Это модальное окно</h2>
+      <p class="modal__content-message">Тут будет находиться контент для отображения</p>
+      <p class="modal__content-message">Нажмите за пределы окна или на крестик, чтобы закрыть модальное окно</p>
+    </div>
+  </div>
+</body>
+</html>

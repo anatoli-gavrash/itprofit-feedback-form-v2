@@ -15,9 +15,9 @@
   "homepage": "https://github.com/anatoli-gavrash/itprofit-feedback-form-v2#readme",
   "browserslist": "> 0.25%, not dead",
   "scripts": {
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production",
+    "dev": "webpack serve --mode development",
     "start": "webpack serve --mode development",
+    "build": "webpack --mode production",
     "server": "node server/index.js"
   },
   "dependencies": {
@@ -31,8 +31,8 @@
     "clean-webpack-plugin": "4.0.0",
     "css-loader": "6.10.0",
     "css-minimizer-webpack-plugin": "6.0.0",
-    "html-loader": "5.0.0",
     "html-webpack-plugin": "5.6.0",
+    "imask": "7.4.0",
     "mini-css-extract-plugin": "2.8.0",
     "sass": "1.70.0",
     "sass-loader": "14.1.0",
